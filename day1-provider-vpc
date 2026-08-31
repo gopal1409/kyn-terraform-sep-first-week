@@ -42,3 +42,4 @@ terraform show tfplan > tfplan.txt
 ###finally do
 terraform apply 
 ###this will create vpc in aws console now only that it will create terraform.tfstate and store the information inside the file
+terraform destroy
