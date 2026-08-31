@@ -2,4 +2,32 @@
   ##then open visual studio code then click on file - open folder -select desktop and selct the terraform-project-aws
   ###once done then again click on file and click on autosave
   ##then lets  create a file called as provider.tf and vpc.tf
-  
+#inside provider.tf file copy line number 7 till 19
+#we have authenticate using aws #i need aws provider
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0" #version number if always required for prod
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "us-east-1" #which will select the region where we are creating the resources
+}
+
+#lets create the vpc.tf file #inside vpc.tf file you need to copy from line 23 till 28 and change my name to your name
+# Create a VPC
+resource "aws_vpc" "example" {
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "gopal-vpc"
+  }
+}
+
+###once done in visual studio code click on three dots terminal new terminal
+#inside the terminal 
+#run a command terraform init
+###this will create a .terraform folder inside the folder you will get the terraform plugin
