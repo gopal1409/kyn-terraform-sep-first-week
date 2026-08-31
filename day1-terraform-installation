@@ -1,0 +1,12 @@
+##inside your windows machine you need to open powershell in admin mode
+  Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+  ###you need to refresh the env
+  refreshenv
+  choco install git
+  choco install vscode
+  choco install terraform
+  choco install awscli -y
+###once installed you can verify the same. 
+  terraform --version
+  git version
+  aws --version
