@@ -1,0 +1,7 @@
+###in powershell run 
+  aws configure
+  ###copy the access key and paste it
+  ##copy the secret access key and paste it
+  #in region put us-east-1
+  #output format json
+  ####after that aws s3 ls
