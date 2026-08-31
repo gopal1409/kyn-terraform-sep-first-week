@@ -1,0 +1,102 @@
+2026-08-31 09:46:51 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week
+	
+2026-08-31 09:53:20 From Gopal Das to Everyone:
+	https://github.com/gopal1409/aws-documentation-terraform
+	
+2026-08-31 10:01:20 From Gopal Das to Everyone:
+	https://docs.google.com/spreadsheets/d/1rfN-kflz4F6waNcmORoAxSGlNQmi7ZIEfAWCxci4xLE/edit?usp=sharing
+	
+2026-08-31 10:04:25 From Muskan Mittal to Everyone:
+	done
+	
+2026-08-31 10:05:48 From Aiman N to Everyone:
+	done
+	
+2026-08-31 10:06:09 From HanumanSubramanyamNi to Everyone:
+	done
+	
+2026-08-31 10:33:52 From Gopal Das to Everyone:
+	10.0.0.0/16
+	
+2026-08-31 10:34:04 From Gopal Das to Everyone:
+	aws support maximum class b network.
+	
+2026-08-31 10:48:59 From Gopal Das to Everyone:
+	10.0.0.0/24-app subnet
+	
+2026-08-31 10:49:08 From Gopal Das to Everyone:
+	db subnet 11.0.0.0/24
+	
+2026-08-31 10:50:21 From Gopal Das to Everyone:
+	10.0.1.0/24
+	
+2026-08-31 10:50:58 From HanumanSubramanyamNi to Everyone:
+	done
+	
+2026-08-31 10:51:23 From Aiman N to Everyone:
+	done
+	
+2026-08-31 10:55:07 From Gopal Das to Everyone:
+	cutom rtb
+	
+2026-08-31 10:59:12 From Gopal Das to Everyone:
+	0.0.0.0/0
+	
+2026-08-31 11:17:23 From Gopal Das to Everyone:
+	11:40
+	
+2026-08-31 11:17:25 From Gopal Das to Everyone:
+	tea
+	
+2026-08-31 11:40:41 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-08-31 11:41:32 From Sanjana R to Everyone:
+	Back 
+	
+2026-08-31 12:27:18 From Gopal Das to Everyone:
+	https://docs.google.com/spreadsheets/d/1rfN-kflz4F6waNcmORoAxSGlNQmi7ZIEfAWCxci4xLE/edit?usp=sharing
+	
+2026-08-31 12:55:16 From Gopal Das to Everyone:
+	ec2-34-232-20-97.compute-1.amazonaws.com
+	
+2026-08-31 13:20:03 From Gopal Das to Everyone:
+	2:20
+	
+2026-08-31 14:20:50 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-08-31 14:22:32 From Sanjana R to Everyone:
+	back
+	
+2026-08-31 14:23:31 From Aiman N to Everyone:
+	back
+	
+2026-08-31 14:34:29 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day1-terraform-installation
+	
+2026-08-31 15:02:31 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week
+	
+2026-08-31 15:28:42 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day1-aws-authentication
+	
+2026-08-31 15:56:13 From Gopal Das to Everyone:
+	4:15 tea
+	
+2026-08-31 16:15:14 From Sanjana R to Everyone:
+	back
+	
+2026-08-31 16:17:18 From Aiman N to Everyone:
+	back
+	
+2026-08-31 16:17:38 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-08-31 16:23:28 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day1-provider-vpc
+	
+2026-08-31 16:40:03 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day1-provider-vpc
+	
