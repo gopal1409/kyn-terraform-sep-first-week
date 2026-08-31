@@ -31,3 +31,14 @@ resource "aws_vpc" "example" {
 #inside the terminal 
 #run a command terraform init
 ###this will create a .terraform folder inside the folder you will get the terraform plugin
+####lets do validate fmt plan apply
+terraform validate
+terraform fmt
+terraform plan
+terraform plan -out tfplan
+##if you want to apply this tfplan later on terraform apply tfplan
+terraform show tfplan 
+terraform show tfplan > tfplan.txt
+###finally do
+terraform apply 
+###this will create vpc in aws console now only that it will create terraform.tfstate and store the information inside the file
