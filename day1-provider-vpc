@@ -1,0 +1,5 @@
+##lets create a folder in desktop called a terraform-project-aws
+  ##then open visual studio code then click on file - open folder -select desktop and selct the terraform-project-aws
+  ###once done then again click on file and click on autosave
+  ##then lets  create a file called as provider.tf and vpc.tf
+  
