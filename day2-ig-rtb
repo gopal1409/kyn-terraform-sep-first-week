@@ -1,0 +1,29 @@
+#create a new file ig.tf copy line 3 till 12
+  #this will create the internet gateway and attach the same with your vpc
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.projecty-vpc.id
+
+ tags = local.common_tags
+}
+
+output "igw" {
+  description = "internet gw id"
+  value = aws_internet_gateway.igw.id
+}
+
+###lets create the route table and assocaite the igw with the rtb cteate a file custom-rtb.tf add line 16 till 27
+  #this will create a custom rtb
+resource "aws_route_table" "internet" {
+  vpc_id = aws_vpc.projecty-vpc.id
+
+  tags = local.common_tags
+}
+
+##in the custom rtb we need to attach the internet gw
+resource "aws_route" "example" {
+  route_table_id         = aws_route_table.internet.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = aws_internet_gateway.igw.id #in the rtb we are attaching the internet gw which we created earlier
+}
+
+#finally do terraform apply and verify the ig and custom rtb is created or not
