@@ -1,0 +1,19 @@
+##first do terraform destroy
+##create a new file networkoutput.tf add line number 3 till 16
+  output "vpc_id" {
+  description = "ID of the VPC"
+  value = aws_vpc.projecty-vpc.id
+}
+
+output "subnet_id" {
+  description = "ID of the Subnet"
+  value = aws_subnet.projecty-subnet.id
+}
+
+output "vpc_cidr_block" {
+  description = "CIDR block of the VPC"
+  value = aws_vpc.projecty-vpc.cidr_block
+}
+
+####then do terraform apply 
+  ###check the output block showing vpc id subnet id and cidr of vpc. go to aws console and verify that it shows the same values
