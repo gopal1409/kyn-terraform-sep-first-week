@@ -1,0 +1,99 @@
+2026-09-01 09:32:55 From Gopal Das to Everyone:
+	https://docs.google.com/spreadsheets/d/1rfN-kflz4F6waNcmORoAxSGlNQmi7ZIEfAWCxci4xLE/edit?usp=sharing
+	
+2026-09-01 09:36:17 From Gopal Das to Everyone:
+	https://docs.google.com/spreadsheets/d/1rfN-kflz4F6waNcmORoAxSGlNQmi7ZIEfAWCxci4xLE/edit?usp=sharing
+	
+2026-09-01 10:01:40 From Gopal Das to Everyone:
+	Vpc: how to create the vpcSubnet: how to create subnetInternetgw: how to create internetgwCustomrtb: how to create customrtbAttach ig with custom rtb: how to attach ig with custom rtbAttach app subnet with custom rtb: explicilty attach app subnet with rtbHow to launch an instance with custom vpc and subnet
+	
+2026-09-01 10:03:03 From Gopal Das to Everyone:
+	https://registry.terraform.io/providers/-/aws/4.52.0/docs/resources/vpc
+	
+2026-09-01 10:03:40 From Gopal Das to Everyone:
+	https://registry.terraform.io/providers/hashicorp/awS/6.0.0/docs/resources/subnet
+	
+2026-09-01 10:35:05 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day2-resource-refrence-terraform
+	
+2026-09-01 10:58:20 From Gopal Das to Everyone:
+	11:20
+	
+2026-09-01 10:58:33 From Gopal Das to Everyone:
+	tea till 11:20
+	
+2026-09-01 11:20:47 From SanjanaR to Everyone:
+	back
+	
+2026-09-01 11:21:21 From Aiman N to Everyone:
+	back
+	
+2026-09-01 11:21:39 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-09-01 11:51:23 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day2-outputblock
+	
+2026-09-01 12:21:47 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day2-input-varaibles-outputblock-local%20block
+	
+2026-09-01 12:23:02 From HanumanSubramanyamNi to Everyone:
+	K;y*v(&O6ew-;RTR*y30ixwGe6nUE-tM
+	
+2026-09-01 12:37:52 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/input-output-local.png
+	
+2026-09-01 12:44:30 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day2-input-varaibles-outputblock-local%20block
+	
+2026-09-01 12:52:52 From Gopal Das to Everyone:
+	https://registry.terraform.io/providers/hashicorp/awS/6.0.0/docs/resources/subnet
+	
+2026-09-01 13:03:17 From Gopal Das to Everyone:
+	2:00
+	
+2026-09-01 14:01:16 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-09-01 14:02:58 From Muskan Mittal to Everyone:
+	back
+	
+2026-09-01 14:03:02 From Aiman N to Everyone:
+	back
+	
+2026-09-01 14:04:00 From SanjanaR to Everyone:
+	back
+	
+2026-09-01 14:25:06 From Gopal Das to Everyone:
+	https://developer.hashicorp.com/terraform/language/meta-arguments/for_each
+	
+2026-09-01 14:25:31 From Gopal Das to Everyone:
+	Referring to instances
+	
+2026-09-01 14:25:34 From Gopal Das to Everyone:
+	for_each
+	
+2026-09-01 14:25:40 From Gopal Das to Everyone:
+	each.key each.value
+	
+2026-09-01 14:49:12 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day2-terraform-object
+	
+2026-09-01 15:19:21 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day2-ig-rtb
+	
+2026-09-01 15:46:52 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day2-sg.tf
+	
+2026-09-01 15:50:27 From Gopal Das to Everyone:
+	4:10
+	
+2026-09-01 16:10:53 From SanjanaR to Everyone:
+	back
+	
+2026-09-01 16:28:28 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/tree/main
+	
+2026-09-01 16:55:57 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day2-ig-rtb
+	
