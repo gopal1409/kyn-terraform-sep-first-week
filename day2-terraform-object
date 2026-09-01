@@ -1,0 +1,40 @@
+###first do terraform destroy
+  ##create an object-varaibles.tf copy from line 3 till 20
+  variable "subnets" {
+  description = "subnet configuration"
+  type = map(object({
+    cidr_block = string
+    availability_zone = string
+  }))
+  #against the varables we need to define the default values for the subnets. The default values will be used if the user does not provide any values for the subnets.
+  default = {
+    subnet1 = {
+      cidr_block = "10.0.1.0/24"
+      availability_zone = "us-east-1a"
+    }
+    subnet2 = {
+      cidr_block = "10.0.2.0/24"
+      availability_zone = "us-east-1b"
+    }
+  }
+}
+
+########################go to vpc.tf file delete the resource aws_subnet block you need to delete it and copy line 23 till 31
+  resource "aws_subnet" "projecty-subnet" {
+  for_each = var.subnets #this line should contains the subnet configuration which is created earlier
+  vpc_id     = aws_vpc.projecty-vpc.id #this subnet need to be mapped with your vpc
+  cidr_block = each.value.cidr_block 
+  availability_zone = each.value.availability_zone
+  tags = {
+    Name = "gopal-project-subnet-${each.key}" #this line should contains the subnet name which is created earlier
+  }
+}
+
+###go to the networkoutput.tf file and comment the subnet_id block like this for multi line comment /* and end with */  
+/*output "subnet_id" {
+  description = "ID of the Subnet"
+  value = aws_subnet.projecty-subnet.id
+}*/
+
+  ###do terraform apply
+  1. go to the vpc check the subnet there are two subnet created with az1 and az2
