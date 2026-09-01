@@ -27,3 +27,9 @@ resource "aws_route" "example" {
 }
 
 #finally do terraform apply and verify the ig and custom rtb is created or not
+#lets associate every subnet with the custom rtb #on the same file add line 31 till 35 then do terraform apply
+resource "aws_route_table_association" "subnet_association" {
+  for_each = var.subnets #
+  subnet_id      = aws_subnet.projecty-subnet[each.key].id
+  route_table_id = aws_route_table.internet.id
+}
