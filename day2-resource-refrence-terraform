@@ -1,0 +1,33 @@
+#first open visual studio code 
+  ###in the terminal run terraform destroy
+  #click on the vpc.tf file delete everything copy from line 5 till 10 and change my name to your name
+  # Create a VPC
+resource "aws_vpc" "projecty-vpc" { #the name of the refrence block is projecty-vpc custom naming convention
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "gopal-vpc"
+  }
+}
+###do terraform apply
+  1. go to aws console search vpc and check the vpc is created or not. 
+  2. copy the vpc id
+  3. open terraform.tfstate file go extreme below you will find the id which contains vpc id match it witht he vpc id you got it from console of aws. 
+  4. inside the state file check the vpc with refrence block name 
+
+  ###next we will add subnet 
+  ##add this subnet block from line number 19 till 27
+  resource "aws_subnet" "projecty-subnet" {
+  vpc_id     = aws_vpc.projecty-vpc.id #this subnet need to be mapped with your vpc
+  #aws_vpc.projecty-vpc.id #this line should contains the vpc id which is created earlier
+  #terraform apply : it will read all your manifest file and compare with your state file 
+  cidr_block = "10.0.1.0/24"
+  tags = {
+    Name = "gopal-subnet"
+  }
+}
+
+#####activity need to done
+1. terraform plan
+  2. terraform plan will show the vpc id. if you look into line 20 then open the state file there you will see the mapping of aws_vpc.refblock.atheendid
+  3. terraform apply ##this will also show that it is picking up the vpc id but it is picking up from your state file
+  4. verify finally from aws console go to subnet you will see the subnet iis created and mapped with your vpc
