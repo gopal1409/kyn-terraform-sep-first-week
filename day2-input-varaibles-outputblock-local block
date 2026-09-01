@@ -1,0 +1,76 @@
+#terraform destroy 
+##create a file a1.general-varaibles.tf copy from line 3 till 31 change line 12 my name to your name
+  variable "aws_region" {
+  description = "aws region where resource will be created"
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "project_name" {
+  description = "Name of the project"
+  type        = string
+  default     = "gopal-projecty"
+}
+
+variable "environment" {
+  description = "Environment of the project"
+  type        = string
+  default     = "dev"
+}
+
+variable "vpc_cidr_block" {
+  description = "CIDR block for the VPC"
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+variable "subnet_cidr_block" {
+  description = "CIDR block for the Subnet"
+  type        = string
+  default     = "10.0.1.0/24"
+}
+
+####create a file locals.tf copy from line 34 till 40 in line 36 change my name to your name
+  locals {
+  common_tags = { #this common tag is name
+    Name = "gopal-project"
+    Project = var.project_name
+    Environment = var.environment
+    ManagedBy = "IT"
+  }
+}
+
+####go to provider file delete everything and copy from line 45 till 57
+  #we have authenticate using aws #i need aws provider
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0" #version number if always required for prod
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = var.aws_region #which will select the region where we are creating the resources
+}
+
+###########go to vpc.tf delete everything copy from line 61 till 74
+  # Create a VPC
+resource "aws_vpc" "projecty-vpc" { #the name of the refrence block is projecty-vpc custom naming convention
+  cidr_block = var.vpc_cidr_block #this line should contains the vpc cidr block which is created earlier
+  tags = local.common_tags
+}
+
+#with the refrence all the infomration whatever you created in aws will be stored inside the state file. The state file is a local file that is created in the same directory where you run the terraform commands. The state file is used to keep track of the resources that are created and their current state. It is important to keep the state file secure and backed up, as it contains sensitive information about your infrastructure.
+#refrence block for the same resources cannot be duplicated in the same directory. If you want to create another VPC, you need to create a new resource block with a different name.
+resource "aws_subnet" "projecty-subnet" {
+  vpc_id     = aws_vpc.projecty-vpc.id #this subnet need to be mapped with your vpc
+  #aws_vpc.projecty-vpc.id #this line should contains the vpc id which is created earlier
+  #terraform apply : it will read all your manifest file and compare with your state file 
+  cidr_block = var.subnet_cidr_block
+  tags = local.common_tags
+}
+
+##then do terraform apply and verify the resource is created or not
