@@ -70,5 +70,44 @@ resource "aws_lb_target_group_attachment" "alb_target_group_attachment" {
   port             = 80
 }
 
+#create a new file alb.tf in line 75 change my name to your name copy from line 74 till 108
+resource "aws_lb" "alb" {
+  name               = "gopal-lb-tf"
+  #internet facing alb
+  internal           = false
+  #application load balancer
+  load_balancer_type = "application"
+  #security group for alb
+  security_groups    = [aws_security_group.alb_sg.id]
+  #automatically get all subnet creasted in public subnets and attach to alb
+  subnets            = [for subnet in aws_subnet.projecty-subnet : subnet.id]
 
+  tags = {
+    Environment = "production"
+  }
+}
+#we need to create an alb listener which will listen to the traffic on port 80 and forward the traffic to target group
+resource "aws_lb_listener" "alb_listener" {
+    #this will be the load balancer resource name
+  load_balancer_arn = aws_lb.alb.arn
+  port              = "80"
+  protocol          = "HTTP"
 
+  default_action {
+    type             = "forward"
+    #listener will forward the traffic to target group which we created earlier
+    target_group_arn = aws_lb_target_group.alb-tg.arn
+  }
+}
+
+#output the alb dns name which we can use to access the application
+output "alb_dns_name" { 
+    
+  description = "The DNS name of the load balancer"
+  value       = aws_lb.alb.dns_name
+}
+
+#then do terraform apply
+1. in the output your will get the dns of the alb you can copy it paste in the browser withought https refresh the page you will see the internal ip of the server changing
+2. go to target group click on target refresh you will see instance are health 
+3. click on your lb resource map where you will see how the resource are being mapped 
