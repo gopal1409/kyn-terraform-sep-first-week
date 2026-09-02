@@ -1,0 +1,55 @@
+##first you need to do terraform destroy
+  ##create a new file object-instance.tf copy line 3 till 26 also change my name to your name in line 16  and 22 and change the key pair name to your name in line 23 and 17
+  variable "instances" {
+  description = "ec2 instance configuration"
+  type = map(object({
+    subnet_key = string
+    instance_type = string
+    instance_name = string
+    key_name = string
+  }))
+
+  default = {
+    web1 = {
+      subnet_key = "subnet1" #subnet key is a reference to the subnet defined in the subnets variable. This is used to associate the instance with the correct subnet.
+      instance_type = "t2.micro"
+      instance_name = "gopal-web-instance1"
+      key_name = "gopal"
+    }
+    web2 = {
+      subnet_key = "subnet2" #subnet key is a reference to the subnet defined in the subnets variable. This is used to associate the instance with the correct subnet.
+      instance_type = "t3.micro"
+      instance_name = "gopal-web-instance2"
+      key_name = "gopal"
+    }
+  }
+}
+
+###then go to vm.tf file delete everything add line 29 till 55 then do terraform apply
+  resource "aws_instance" "web" {
+  for_each = var.instances #this will read all my instance configuration from the variable instances which we defined in object-varaible-instance.tf
+  ami           = data.aws_ami.ubuntu.id #this is the ami id for ubuntu 20.04
+  instance_type = each.value.instance_type #this will read the instance type from the variable instances which we defined in object-varaible-instance.tf
+  vpc_security_group_ids = [aws_security_group.web.id] #this is the security group id which we created earlier
+  associate_public_ip_address = true #this is to associate the public ip address with the instance
+  subnet_id     = aws_subnet.projecty-subnet[each.value.subnet_key].id #this is the subnet id which we created earlier
+  key_name      = each.value.key_name #this is the key pair name which we created earlier
+  user_data     = file("${path.module}/app.sh") #this is the user data script which we created earlier
+#this path.module is an meta argument in terraform which is used for looking for a file in current directory
+  tags = {
+    Name = each.value.instance_name #this will read the instance name from the variable instances which we defined in object-varaible-instance.tf
+  }
+}
+
+output "web_instance_details" {
+  description = "The details of the web instance"
+  value       = {
+    for key, instance in aws_instance.web : key => {
+      id         = instance.id
+      public_ip  = instance.public_ip
+      private_ip = instance.private_ip
+      instance_type = instance.instance_type
+      subnet_id  = instance.subnet_id
+    }
+  }
+}
