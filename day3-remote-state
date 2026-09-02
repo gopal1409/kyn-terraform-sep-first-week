@@ -1,0 +1,8 @@
+###lets destroy the resource first
+  terraform destroy
+  ###once destroy complete delete this file 
+  .terraform
+  .terraform.lock.hcl
+  terraform.tfstate
+  terraform.tfstate.backup
+  ############################################
