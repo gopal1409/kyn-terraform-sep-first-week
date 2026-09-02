@@ -1,0 +1,78 @@
+2026-09-02 09:40:33 From Gopal Das to Everyone:
+	https://docs.google.com/spreadsheets/d/1rfN-kflz4F6waNcmORoAxSGlNQmi7ZIEfAWCxci4xLE/edit?usp=sharing
+	
+2026-09-02 10:02:21 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day3-graph
+	
+2026-09-02 10:22:29 From Gopal Das to Everyone:
+	initlization condtion update
+	
+2026-09-02 10:42:22 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day3-object-instance
+	
+2026-09-02 11:04:24 From Gopal Das to Everyone:
+	11:25
+	
+2026-09-02 11:25:20 From Aiman N to Everyone:
+	back
+	
+2026-09-02 11:25:30 From SanjanaR to Everyone:
+	back
+	
+2026-09-02 11:51:24 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day3-sg-targetgrp-lb
+	
+2026-09-02 12:16:20 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day3-sg-targetgrp-lb
+	
+2026-09-02 12:35:54 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day3-sg-targetgrp-lb
+	
+2026-09-02 12:59:07 From Gopal Das to Everyone:
+	2:00 lunch
+	
+2026-09-02 14:01:39 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-09-02 14:02:23 From Muskan Mittal to Everyone:
+	back
+	
+2026-09-02 14:08:18 From Gopal Das to Everyone:
+	cd c:\
+	
+2026-09-02 14:08:24 From Gopal Das to Everyone:
+	git clone https://github.com/gopal1409/kyn-sep-first-week-batch26.git
+	
+2026-09-02 14:40:54 From Gopal Das to Everyone:
+	gopal-terraform-state-2026
+	
+2026-09-02 14:44:08 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day3-remote-state
+	
+2026-09-02 15:00:30 From Muskan Mittal to Everyone:
+	@Gopal Das we are unable to hear you
+	
+2026-09-02 15:01:54 From SanjanaR to Everyone:
+	@Muskan Mittal disconnect and connect again
+	
+2026-09-02 15:03:29 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day3-remote-state
+	
+2026-09-02 15:04:43 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day3-remote-state
+	
+2026-09-02 15:36:47 From Gopal Das to Everyone:
+	3:50
+	
+2026-09-02 15:50:09 From SanjanaR to Everyone:
+	back
+	
+2026-09-02 15:50:29 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-09-02 15:51:14 From Aiman N to Everyone:
+	back
+	
+2026-09-02 16:13:27 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day3-git
+	
