@@ -1,0 +1,26 @@
+#lets create some global varaible change the name toy oru name and change the email id to your email id
+git config --global user.name "gopal"
+git config --global user.email "gopal1409@gmail.com"
+mkdir projectx
+cd projectx/
+  #touch command will create empty file in the current directory
+touch DS_Store
+touch secret
+touch auth
+touch calcy.py
+#lets see this file is created or not 
+  ls
+  ########################now i want to check that git is manging this folder or not 
+   git status
+  #git status show me that the folder in not managed by git
+git init
+#once we do git init the folder will be managed by git
+git status
+  #git is storing all your versioining information inside a folder called .git
+ls -la
+ls .git
+#if you delete the .git folder all the versioing will be lost
+rm -rf .git
+###now if you check git status show this is not managed by git
+git status
+
