@@ -53,3 +53,17 @@ output "web_instance_details" {
     }
   }
 }
+###we need to add another subnet in a different az you need to modify the file object-varaibles.tf which contains network configuration
+##add subnet3 with cidr block 10.0.3.0/24 and az will be us-east-1c
+##once completed this will create third subnet in your data center
+#you can verify the same with terraform apply which will show another subnet created
+#you need to modify add the third instance inside object-instance.tf file 
+web3 = {
+      subnet_key = "subnet2" #subnet key is a reference to the subnet defined in the subnets variable. This is used to associate the instance with the correct subnet.
+      instance_type = "t3.medium"
+      instance_name = "gopal-web-instance2" #change the instance name 
+      key_name = "gopal" #change the key pair name 
+    }
+
+#do terraform apply this will create the third instance
+
