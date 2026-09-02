@@ -6,3 +6,20 @@
   terraform.tfstate
   terraform.tfstate.backup
   ############################################
+#create a new file backend.tf
+terraform {
+    backend "s3" {
+        bucket = "gopal-terraform-state-2026" #replace this with your bucket name
+        key    = "dev/gopal.tfstate" #this will create folder inside your s3 bucket and store your state file inside that folder. You can change the folder name as per your requirement.
+        region = "us-east-1"
+        encrypt = true #this will encrypt your state file inside your s3 bucket. You can change the encryption as per your requirement.
+        use_lockfile = true
+    }
+}
+
+###after this do 
+terraform init
+terraform validate
+terraform plan 
+terraform apply
+###then go to s3 bucket of yours you will see a dev folder inside that you will have the state file
