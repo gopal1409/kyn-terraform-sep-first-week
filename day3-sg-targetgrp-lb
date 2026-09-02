@@ -37,3 +37,38 @@ output "alb_sg_port" {
     https = 443
   }
 }
+
+#lets create lb target group and attach instances behind the lb create a new file lb-taget.tf copy line 42 till 71 change my name to yyour name in line 45
+resource "aws_lb_target_group" "alb-tg" {
+    #it is creating a target group for the load balancer and doing health checkup
+    #did you see any where it is adding the instance in the target group?
+  name     = "gopal-projects-tg"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = aws_vpc.projecty-vpc.id
+  #register ec2 instance with target group
+  target_type = "instance"
+  health_check {
+    enabled            = true
+    protocol            = "HTTP"
+    port                = "traffic-port"
+    path                = "/"
+    interval            = 30 #every 30 seconds it is goign to ping your server
+    timeout             = 5 #if your server doesn't respond within 5 seconds, it is considered unhealthy
+    healthy_threshold   = 2
+    unhealthy_threshold = 3 #180 secif your server doesn't respond within 3 attempts, it is considered unhealthy
+    matcher             = "200-399"
+  }
+}
+#we have multiple instance and to attache multiple instance for loop
+resource "aws_lb_target_group_attachment" "alb_target_group_attachment" {
+    for_each = aws_instance.web #contains instance id also
+    #this will be your target group arn which we created earlier and this will be your instance id which we created earlier
+  target_group_arn = aws_lb_target_group.alb-tg.arn
+  target_id        = each.value.id #from where it will get the value
+  #ec2 application port which we are going to use for our application
+  port             = 80
+}
+
+
+
