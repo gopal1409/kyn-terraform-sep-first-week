@@ -40,5 +40,21 @@ git commit -m "working on calculator program"
 ls
 #git log will show our first commit 
 git log
+####
+#lets add a new line in calcy.py 
+ echo "added subtract function" >> calcy.py
+#this will show there is second line in calcy
+cat calcy.py
+#git styatus show calc modified
+git status
+#git diff will show what is there in the calcy.py previously and what you are adding
+git diff
+#lets add the new change
+git add calcy.py
+#commit the new change
+
+  545  git commit -m "added addtion function"
+#now git log will show there are two commit
+  546  git log
 
 
