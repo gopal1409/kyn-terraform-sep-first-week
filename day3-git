@@ -23,4 +23,22 @@ ls .git
 rm -rf .git
 ###now if you check git status show this is not managed by git
 git status
+#lets create our first version
+git init
+#if you look into calcy.py there is no content
+ cat calcy.py
+#using echo command we added a line inside caly.py file
+echo "we are starting with calcy application" > calcy.py
+cat calcy.py
+#lets add it
+git add calcy.py
+#git status show me calcy.py file has been modified 
+git status
+#lets do a commit -m this will commit the code with this message 
+git commit -m "working on calculator program"
+  git status
+ls
+#git log will show our first commit 
+git log
+
 
