@@ -1,0 +1,4 @@
+##open the terminal
+  terraform graph
+  ###copy the output and paste it in this website
+  https://dreampuf.github.io/GraphvizOnline/
