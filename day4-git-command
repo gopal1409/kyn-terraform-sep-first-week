@@ -1,0 +1,12 @@
+##lets ignore some of the files
+  ##you need to create a file called as .gitignore
+  cd c:\
+    cd projectx
+touch .gitignore
+echo "DS_Store" > .gitignore
+echo "auth" >> .gitignore
+
+echo "secret" >> .gitignore
+  cat .gitignore
+  #if you do git status now it will show that git is stop tracking those files
+   git status
