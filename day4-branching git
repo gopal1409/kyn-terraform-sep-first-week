@@ -1,0 +1,33 @@
+#lets create our working website
+touch webpage
+echo "this is my working website" > webpage
+git add .
+git commit -m "working website"
+git push origin main
+  #if you look into the webpage it show single line
+cat webpage
+
+  ###we will create a new branch called as feature-login
+git branch feature-login
+  #git branch will show the pointer or we are in which branch
+git branch
+  #to move to a particular branch we use checkout
+git checkout feature-login
+  #now git branch will show we are in which branch
+  git branch
+  #in the new branch we got the same code from main branch
+cat webpage
+  #we add a new line to the branch
+echo "adding login screen" >> webpage
+  #now is you see webpage contains two line 
+cat webpage
+git add .
+git commit -m "added login screen"
+#lets move to the main branch and see that whatever changes we have done in feature branch is reflected or not 
+git checkout main
+  #this will show orginal code
+cat webpage
+ git branch
+  #lets push all the branches to github
+git push origin --all
+###once push check in the github there are branches create click on the webpage file verify how many lines are there in master and feature-login branch
