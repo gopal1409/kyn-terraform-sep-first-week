@@ -2,6 +2,8 @@
   ##you need to create a file called as .gitignore
   cd c:\
     cd projectx
+git status
+git log
 touch .gitignore
 echo "DS_Store" > .gitignore
 echo "auth" >> .gitignore
