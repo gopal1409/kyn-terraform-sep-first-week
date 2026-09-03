@@ -1,0 +1,132 @@
+2026-09-03 09:50:43 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day4-git-command
+	
+2026-09-03 09:56:39 From Muslkan to Everyone:
+	done
+	
+2026-09-03 09:59:48 From Gopal Das to Everyone:
+	GitHub.com
+	
+2026-09-03 10:02:29 From HanumanSubramanyamNi to Everyone:
+	done
+	
+2026-09-03 10:04:00 From Sanjana R to Everyone:
+	done
+	
+2026-09-03 10:07:20 From Aiman N to Everyone:
+	done
+	
+2026-09-03 10:09:02 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week
+	
+2026-09-03 10:09:56 From Gopal Das to Everyone:
+	https://github.com/gopal1409/aws-documentation-terraform
+	
+2026-09-03 10:12:15 From HanumanSubramanyamNi to Everyone:
+	done
+	
+2026-09-03 10:12:33 From Sanjana R to Everyone:
+	done
+	
+2026-09-03 10:19:11 From Gopal Das to Everyone:
+	ssh-keygen -t rsa
+	
+2026-09-03 10:19:33 From Gopal Das to Everyone:
+	cat  /c/Users/gopal/.ssh/id_rsa.pub
+	
+2026-09-03 10:29:40 From Sanjana R to Everyone:
+	done
+	
+2026-09-03 10:32:45 From HanumanSubramanyamNi to Everyone:
+	done
+	
+2026-09-03 10:34:36 From Aiman N to Everyone:
+	done
+	
+2026-09-03 11:20:59 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day4-branching%20git
+	
+2026-09-03 11:44:40 From Gopal Das to Everyone:
+	12:00
+	
+2026-09-03 12:00:25 From Aiman N to Everyone:
+	back
+	
+2026-09-03 12:24:12 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-hansolo-june26
+	
+2026-09-03 12:41:08 From Gopal Das to Everyone:
+	terraform destroy
+	
+2026-09-03 12:41:50 From HanumanSubramanyamNi to Everyone:
+	done
+	
+2026-09-03 12:42:13 From Sanjana R to Everyone:
+	done
+	
+2026-09-03 12:52:44 From Gopal Das to Everyone:
+	2:00 pm
+	
+2026-09-03 14:00:23 From Sanjana R to Everyone:
+	back
+	
+2026-09-03 14:00:53 From Muslkan to Everyone:
+	back
+	
+2026-09-03 14:00:57 From Aiman N to Everyone:
+	back
+	
+2026-09-03 14:21:45 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/terraformcloud-aws-git-workflow.png
+	
+2026-09-03 14:31:05 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day4-terraform-cloud-integration
+	
+2026-09-03 14:39:39 From HanumanSubramanyamNi to Everyone:
+	git@github.com:Nikithasubramanyam/terraform-cloud-integration.git
+	
+2026-09-03 14:41:30 From HanumanSubramanyamNi to Everyone:
+	https://github.com/Nikithasubramanyam/terraform-cloud-integration.git
+	
+2026-09-03 14:41:58 From Sanjana R to Everyone:
+	https://github.com/sanjana07-win/terraform-cloud-integration.git
+	
+2026-09-03 14:47:31 From Aiman N to Everyone:
+	https://github.com/AimanNaseer123/terraform-cloud-integration.git
+	
+2026-09-03 14:52:43 From Gopal Das to Everyone:
+	https://app.terraform.io/app
+	
+2026-09-03 15:12:46 From Gopal Das to Everyone:
+	AWS_ACCESS_KEY_ID
+	
+2026-09-03 15:12:52 From Gopal Das to Everyone:
+	AWS_SECRET_ACCESS_KEY
+	
+2026-09-03 15:45:14 From Gopal Das to Everyone:
+	https://app.terraform.io/app
+	
+2026-09-03 16:15:21 From Sanjana R to Everyone:
+	back
+	
+2026-09-03 16:15:33 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-09-03 16:15:36 From Aiman N to Everyone:
+	back
+	
+2026-09-03 16:20:55 From Gopal Das to Everyone:
+	in object varaibles instance file change the instance to t2.medium
+	
+2026-09-03 16:21:26 From Gopal Das to Everyone:
+	git add .
+	
+2026-09-03 16:21:38 From Gopal Das to Everyone:
+	git commit -m "change instance type to t2.medium"
+	
+2026-09-03 16:21:42 From Gopal Das to Everyone:
+	git push origin main
+	
+2026-09-03 16:53:46 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day-static-code-analysis
+	
