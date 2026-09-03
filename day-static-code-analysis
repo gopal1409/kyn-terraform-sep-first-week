@@ -1,0 +1,9 @@
+####install trivy and tflint
+  ###open powershell in admin mode 
+  choco install tflint 
+  choco install trivy 
+  ########
+  inside your code in visual studio terminal 
+  ##########################################run this command 
+  tflint
+  trivy config .
