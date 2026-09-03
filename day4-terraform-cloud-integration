@@ -1,0 +1,16 @@
+###inside visual code in the same folder where our project is there create a new file .gitignore inside the file copy line 2 till 5
+.terraform.lock.hcl
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+##then run the git command
+  rm .git
+  #this will show this is not an git directory
+  git status 
+  ##to manage it using git
+  git init
+  git add .
+  git commit -m "terraform project"
+  ##then go to github and create a new repo click on the + icon in github give the name as terraform-cloud-integration
+  ##once the repo is created you will get ssh command to push your code copy the same and paste it in the terminal
+  
