@@ -1,0 +1,114 @@
+2026-09-04 10:17:23 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day5-terraform-tfvars-file
+	
+2026-09-04 10:29:58 From SanjanaR to Everyone:
+	done
+	
+2026-09-04 10:33:55 From Gopal Das to Everyone:
+	destroy
+	
+2026-09-04 10:34:02 From Aiman N to Everyone:
+	done
+	
+2026-09-04 10:34:06 From SanjanaR to Everyone:
+	done
+	
+2026-09-04 10:35:13 From HanumanSubramanyamNi to Everyone:
+	done
+	
+2026-09-04 11:17:02 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day4-terraform-workspace
+	
+2026-09-04 11:37:48 From HanumanSubramanyamNi to Everyone:
+	done
+	
+2026-09-04 11:38:42 From Sanjana R to Everyone:
+	done
+	
+2026-09-04 12:01:21 From Sanjana R to Everyone:
+	back
+	
+2026-09-04 12:04:50 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-09-04 12:06:22 From Muskan to Everyone:
+	back
+	
+2026-09-04 12:13:35 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day4-terraform-workspace
+	
+2026-09-04 12:13:45 From Gopal Das to Everyone:
+	133
+	
+2026-09-04 12:55:28 From Gopal Das to Everyone:
+	lunch till 2:00
+	
+2026-09-04 13:06:10 From Muskan to Everyone:
+	Am i audible ?
+	
+2026-09-04 14:00:20 From Sanjana R to Everyone:
+	back
+	
+2026-09-04 14:01:02 From Aiman N to Everyone:
+	back
+	
+2026-09-04 14:01:12 From HanumanSubramanyamNi to Everyone:
+	back
+	
+2026-09-04 14:04:32 From Muskan to Everyone:
+	will be back in 5 min
+	
+2026-09-04 14:12:04 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day5-modules
+	
+2026-09-04 14:57:35 From HanumanSubramanyamNi to Everyone:
+	https://github.com/Nikithasubramanyam/aws-terraform-module-sep-week1.git
+	
+2026-09-04 15:00:51 From Sanjana R to Everyone:
+	https://github.com/sanjana07-win/sanjana-aws-terraform-module-sep-week1.git
+	
+2026-09-04 15:02:49 From Aiman N to Everyone:
+	https://github.com/AimanNaseer123/Terraform-aws-module-sep-week1.git
+	
+2026-09-04 15:20:42 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day5-call-module
+	
+2026-09-04 15:22:37 From Gopal Das to Everyone:
+	/tree/main remove also remove https from front
+	
+2026-09-04 15:39:38 From Sanjana R to Everyone:
+	done
+	
+2026-09-04 15:44:15 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day5-module-sg
+	
+2026-09-04 15:56:58 From Gopal Das to Everyone:
+	git add .
+	
+2026-09-04 16:01:41 From HanumanSubramanyamNi to Everyone:
+	done
+	
+2026-09-04 16:10:29 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day5-call-module-sg
+	
+2026-09-04 16:17:31 From Gopal Das to Everyone:
+	https://aws.amazon.com/free/
+	
+2026-09-04 16:21:48 From Gopal Das to Everyone:
+	output "security_group_id" {  value = module.security_group.alb_security_group_id}
+	
+2026-09-04 16:29:18 From HanumanSubramanyamNi to Everyone:
+	will be back in 5 mins
+	
+2026-09-04 16:34:07 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/blob/main/day5-terraform-module-complete
+	
+2026-09-04 16:34:30 From Gopal Das to Everyone:
+	https://aws.amazon.com/free/
+	
+2026-09-04 16:37:57 From Gopal Das to Everyone:
+	gopal1409@gmail.com
+	
+2026-09-04 16:38:41 From Gopal Das to Everyone:
+	https://github.com/gopal1409/kyn-terraform-sep-first-week/
+	
