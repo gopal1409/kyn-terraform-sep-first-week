@@ -1,0 +1,78 @@
+##lets create dev.tfvars change my name to your name copy line 2 till line number 30 #once you apply dev.tfvars go to aws portal you will see two instance
+  aws_region = "us-east-1"
+project_name = "gopal-project-dev"
+environment = "dev"
+vpc_cidr_block = "10.0.0.0/16"
+subnet_cidr_block = "10.0.1.0/24"
+subnets = {
+  subnet1 = {
+    cidr_block = "10.0.1.0/24"
+    availability_zone = "us-east-1a"
+  }
+    subnet2 = {
+        cidr_block = "10.0.2.0/24"
+        availability_zone = "us-east-1b"
+    }
+}
+instances = {
+    web1 = {
+        subnet_key = "subnet1"
+        instance_type = "t2.micro"
+        instance_name = "gopal-web-instance1"
+        key_name = "gopal"
+    }
+     web2 = {
+        subnet_key = "subnet2"
+        instance_type = "t2.micro"
+        instance_name = "gopal-web-instance2"
+        key_name = "gopal"
+    }
+}
+
+#to apply the same
+  terraform init
+  terraform plan 
+  terraform apply --var-file dev.tfvars
+  ##you will see that terraform create the resources with dev.tfvars file
+#lets create test.tfvars copy line 38 till 76 when you apply with test.tfvars go to aws portal check third instance created or not 
+   aws_region = "us-east-1"
+project_name = "gopal-project-dev"
+environment = "dev"
+vpc_cidr_block = "10.0.0.0/16"
+subnet_cidr_block = "10.0.1.0/24"
+subnets = {
+  subnet1 = {
+    cidr_block = "10.0.1.0/24"
+    availability_zone = "us-east-1a"
+  }
+    subnet2 = {
+        cidr_block = "10.0.2.0/24"
+        availability_zone = "us-east-1b"
+    }
+   subnet3 = {
+        cidr_block = "10.0.3.0/24"
+        availability_zone = "us-east-1c"
+    }
+}
+instances = {
+    web1 = {
+        subnet_key = "subnet1"
+        instance_type = "t2.micro"
+        instance_name = "gopal-web-instance1"
+        key_name = "gopal"
+    }
+     web2 = {
+        subnet_key = "subnet2"
+        instance_type = "t2.micro"
+        instance_name = "gopal-web-instance2"
+        key_name = "gopal"
+    }
+  web3 = {
+        subnet_key = "subnet3"
+        instance_type = "t2.micro"
+        instance_name = "gopal-web-instance3"
+        key_name = "gopal"
+    }
+}
+#do terraform apply now you will see three instance
+  terraform apply --var-file=test.tfvars
