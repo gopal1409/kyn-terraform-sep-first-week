@@ -1,0 +1,152 @@
+3. Security Group module
+
+Directory:
+
+modules/security-group/
+├── main.tf
+├── variables.tf
+└── outputs.tf
+ indsde modules/security-group/main.tf copy line 10 till 107
+resource "aws_security_group" "alb" {
+
+  name = "${var.project_name}-${var.environment}-alb-sg"
+
+  description = "Security group for Application Load Balancer"
+
+  vpc_id = var.vpc_id
+
+  ingress {
+    description = "HTTP"
+
+    from_port = var.app_port
+    to_port   = var.app_port
+
+    protocol = "tcp"
+
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    description = "Allow outbound traffic"
+
+    from_port = 0
+    to_port   = 0
+
+    protocol = "-1"
+
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.project_name}-${var.environment}-alb-sg"
+    }
+  )
+}
+
+
+resource "aws_security_group" "web" {
+
+  name = "${var.project_name}-${var.environment}-web-sg"
+
+  description = "Security group for web servers"
+
+  vpc_id = var.vpc_id
+
+  ingress {
+    description = "HTTP from ALB"
+
+    from_port = var.app_port
+    to_port   = var.app_port
+
+    protocol = "tcp"
+
+    security_groups = [
+      aws_security_group.alb.id
+    ]
+  }
+
+  dynamic "ingress" {
+
+    for_each = var.ssh_cidr_blocks
+
+    content {
+
+      description = "SSH"
+
+      from_port = 22
+      to_port   = 22
+
+      protocol = "tcp"
+
+      cidr_blocks = [
+        ingress.value
+      ]
+    }
+  }
+
+  egress {
+
+    description = "Allow outbound traffic"
+
+    from_port = 0
+    to_port   = 0
+
+    protocol = "-1"
+
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = merge(
+    var.common_tags,
+    {
+      Name = "${var.project_name}-${var.environment}-web-sg"
+    }
+  )
+}
+
+inside modules/security-group/variables.tf copy line 110 till 136
+variable "project_name" {
+  type = string
+}
+
+variable "environment" {
+  type = string
+}
+
+variable "vpc_id" {
+  type = string
+}
+
+variable "app_port" {
+  type    = number
+  default = 80
+}
+
+variable "ssh_cidr_blocks" {
+  description = "CIDR blocks allowed for SSH"
+  type        = list(string)
+  default     = []
+}
+
+variable "common_tags" {
+  type    = map(string)
+  default = {}
+}
+
+#inside modules/security-group/outputs.tf line 139 till 147
+output "alb_security_group_id" {
+  description = "ALB security group ID"
+  value       = aws_security_group.alb.id
+}
+
+output "web_security_group_id" {
+  description = "Web server security group ID"
+  value       = aws_security_group.web.id
+}
+
+##after this again upload the file in github
+  git add .
+  git commit -m "security group added"
+  git push origin main
