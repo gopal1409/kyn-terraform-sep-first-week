@@ -1,0 +1,101 @@
+##in your desktop create a folder aws-call-module
+  #open visual studio code file open folder desktop select aws-call-module directory
+  ##inside the directory we will create some file 
+  provider.tf
+  ###################################copy from line 7 till 19
+  #we have authenticate using aws #i need aws provider
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0" #version number if always required for prod
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = var.aws_region #which will select the region where we are creating the resources
+}
+
+#create a file local.tf copy line 22 till 28
+  locals {
+  common_tags = { #this common tag is name
+    Name = var.project_name
+    Environment = var.environment
+    ManagedBy = "IT"
+  }
+}
+
+#create main.tf copy line 31 till 38 
+  module "networking" {
+  source = "github.com/AimanNaseer123/Terraform-aws-module-sep-week1/modules/networking"
+  project_name = var.project_name
+  environment = var.environment
+  vpc_cidr_block = var.vpc_cidr_block
+  subnets = var.subnets
+  common_tags = local.common_tags
+}
+
+create a file output.tf copy line 41 till 47
+  output "vpc_id" {
+  value = module.networking.vpc_id
+}
+
+output "subnet_ids" {
+  value = module.networking.subnet_ids
+}
+
+###################create a files variables.tf copy line 50 till 95 change the line 59 name with your name
+  variable "aws_region" {
+  description = "aws region where resource will be created"
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "project_name" {
+  description = "Name of the project"
+  type        = string
+  default     = "gopal-projecty"
+}
+
+variable "environment" {
+  description = "Environment of the project"
+  type        = string
+  default     = "dev"
+}
+
+variable "vpc_cidr_block" {
+  description = "CIDR block for the VPC"
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+variable "subnets" {
+  description = "subnet configuration"
+  type = map(object({
+    cidr_block = string
+    availability_zone = string
+  }))
+  #against the varables we need to define the default values for the subnets. The default values will be used if the user does not provide any values for the subnets.
+  default = {
+    subnet1 = {
+      cidr_block = "10.0.1.0/24"
+      availability_zone = "us-east-1a"
+    }
+    subnet2 = {
+      cidr_block = "10.0.2.0/24"
+      availability_zone = "us-east-1b"
+    }
+     subnet3 = {
+      cidr_block = "10.0.3.0/24"
+      availability_zone = "us-east-1c"
+    }
+  }
+}
+#after this do 
+  terraform init
+  ###expand the .terraform folder which has download your module inside a module directory
+  terraform plan
+  terraform apply
+  ##vberify the resource created in aws
