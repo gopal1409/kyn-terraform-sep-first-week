@@ -1,0 +1,132 @@
+#lets create workspace in terraform which is similar to your branches in git it will copy the whole code 
+16 terraform workspace                                                                                                  
+  17 terraform workspace list   
+  #new will create a new workspace
+  18 terraform workspace new dev     
+  #this will show the workspace is creted with the name dev
+  19 terraform workspace list   
+  #lets apply it in name workspace
+  20 terraform apply --var-file=dev.tfvars      
+  ##go to vpc verify that your vpc cidr ig subnet is created or not 
+  #lets create test workspace
+                                                                                         
+  22 terraform workspace new test 
+  #lets modify the loccal.tf file delete everything change my name to your name a new vpc will be created with test copy line 16 till 22
+  locals {
+  common_tags = { #this common tag is name
+    Name = "gopal-project-test"
+    Project = var.project_name
+    Environment = var.environment
+    ManagedBy = "IT"
+  }
+}
+
+###inside the test.tfvars delete everything and add this from line 25 till 60 change my name to your name when applied it will create two instance only
+  aws_region = "us-east-1"
+project_name = "gopal-project-test"
+environment = "test"
+vpc_cidr_block = "172.16.0.0/16"
+subnet_cidr_block = "172.16.1.0/24"
+subnets = {
+  subnet1 = {
+    cidr_block = "172.16.1.0/24"
+    availability_zone = "us-east-1a"
+  }
+  subnet2 = {
+    cidr_block = "172.16.2.0/24"
+    availability_zone = "us-east-1b"
+  }
+  subnet3 = {
+    cidr_block = "172.16.3.0/24"
+    availability_zone = "us-east-1c"
+  }
+    
+}
+instances = {
+    web1 = {
+        subnet_key = "subnet1"
+        instance_type = "t2.micro"
+        instance_name = "gopal-web-instance1-test"
+        key_name = "gopal"
+    }
+    web2 = {
+        subnet_key = "subnet2"
+        instance_type = "t2.micro"
+        instance_name = "gopal-web-instance2-test"
+        key_name = "gopal"
+    }
+    
+    
+}
+#open the lb.tf delete everything and paste this and change my name to your name copy line 62 till 96
+  resource "aws_lb" "alb" {
+  name               = "gopal-lb-tf-dev"
+  #internet facing alb
+  internal           = false
+  #application load balancer
+  load_balancer_type = "application"
+  #security group for alb
+  security_groups    = [aws_security_group.alb_sg.id]
+  #automatically get all subnet creasted in public subnets and attach to alb
+  subnets            = [for subnet in aws_subnet.projecty-subnet : subnet.id]
+
+  tags = {
+    Environment = "production"
+  }
+}
+#we need to create an alb listener which will listen to the traffic on port 80 and forward the traffic to target group
+resource "aws_lb_listener" "alb_listener" {
+    #this will be the load balancer resource name
+  load_balancer_arn = aws_lb.alb.arn
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    #listener will forward the traffic to target group which we created earlier
+    target_group_arn = aws_lb_target_group.alb-tg.arn
+  }
+}
+
+#output the alb dns name which we can use to access the application
+output "alb_dns_name" { 
+    
+  description = "The DNS name of the load balancer"
+  value       = aws_lb.alb.dns_name
+}
+#lets modify the alb-target-group.tf file delete everything change my name to your name copy line 98 till 127
+  resource "aws_lb_target_group" "alb-tg" {
+    #it is creating a target group for the load balancer and doing health checkup
+    #did you see any where it is adding the instance in the target group?
+  name     = "gopal-projects-tg-dev"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = aws_vpc.projecty-vpc.id
+  #register ec2 instance with target group
+  target_type = "instance"
+  health_check {
+    enabled            = true
+    protocol            = "HTTP"
+    port                = "traffic-port"
+    path                = "/"
+    interval            = 30 #every 30 seconds it is goign to ping your server
+    timeout             = 5 #if your server doesn't respond within 5 seconds, it is considered unhealthy
+    healthy_threshold   = 2
+    unhealthy_threshold = 3 #180 secif your server doesn't respond within 3 attempts, it is considered unhealthy
+    matcher             = "200-399"
+  }
+}
+#we have multiple instance and to attache multiple instance for loop
+resource "aws_lb_target_group_attachment" "alb_target_group_attachment" {
+    for_each = aws_instance.web #contains instance id also
+    #this will be your target group arn which we created earlier and this will be your instance id which we created earlier
+  target_group_arn = aws_lb_target_group.alb-tg.arn
+  target_id        = each.value.id #from where it will get the value
+  #ec2 application port which we are going to use for our application
+  port             = 80
+}
+
+
+
+#to apply 
+  terraform apply --var-file=test.tfvars
