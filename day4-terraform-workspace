@@ -127,6 +127,18 @@ resource "aws_lb_target_group_attachment" "alb_target_group_attachment" {
 }
 
 
-
 #to apply 
   terraform apply --var-file=test.tfvars
+##how to destroy the workspaces. 
+terraform workspace list
+##you will see the pointenr point to your test workspace
+terraform workspace select test
+##then run terraform destroy will delete all the resource inside test workspace
+terraform destroy
+###lets move to the dev workspace
+terraform workspace select dev
+###destory the workspace dev
+terraform destroy
+###############################
+##finally we will move to default workspace
+terraform workspace select default
